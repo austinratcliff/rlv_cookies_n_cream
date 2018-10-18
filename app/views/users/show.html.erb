@@ -1,2 +1,12 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h3>Details</h3>
+
+<p><strong>Name:</strong> <%= @user.name %></p>
+<p><strong>Email:</strong> <%= @user.email %></p>
+<p><strong>Phone:</strong> <%= @user.phone %></p>
+
+<%= link_to 'Edit', '' %>
+<%= link_to 'Delete', '' %>
+
+<h3>Orders</h3>
+
+<!-- List orders here -->
