@@ -1,2 +1,9 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<%= form_with model: @order do |form| %>
+  <%= form.label :count, 'Count:' %><br>
+  <%= form.select :count, options_from_collection_for_select(@counts, :first, :last) %><br>
+  <%= form.label :description, 'Description:' %><br>
+  <%= form.text_area :description %><br>
+  <%= form.label :is_delivery, 'Delivery?' %><br>
+  <%= form.check_box :is_delivery, {}, true, false %><br>
+  <%= form.submit 'Next' %>
+<% end %>
