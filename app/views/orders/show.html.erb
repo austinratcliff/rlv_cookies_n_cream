@@ -11,7 +11,8 @@
 <% else %>
   <h3>Pickup details</h3>
 
-  <!-- List pickup here -->
+  <p><strong>Pickup address:</strong> 812 NW 194th Ter, Edmond, OK 73012</p>
+  <p><strong>Pickup date and time:</strong> <%= @order.pickup.pickup_at.strftime('%B %-d, %Y at %I:%M%P') %></p>
 <% end %>
 
 <%= link_to 'Edit', edit_order_path(@order) %>
