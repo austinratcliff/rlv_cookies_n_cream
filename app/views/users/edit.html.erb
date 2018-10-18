@@ -1,0 +1,10 @@
+<%= form_with model: @user, method: :put do |form| %>
+  <%= form.text_field :first_name, placeholder: 'First name' %><br>
+  <%= form.text_field :last_name, placeholder: 'Last name' %><br>
+  <%= form.email_field :email, placeholder: 'Email' %><br>
+  <%= form.phone_field :phone, placeholder: 'Phone' %><br><br>
+  <%= form.label :password, 'Enter your password to save' %><br>
+  <%= form.password_field :password, placeholder: 'Password' %><br>
+  <%= form.password_field :password_confirmation, placeholder: 'Password confirmation' %><br>
+  <%= form.submit 'Save' %>
+<% end %>
