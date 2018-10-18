@@ -14,5 +14,5 @@
   <!-- List pickup here -->
 <% end %>
 
-<%= link_to 'Edit', '' %>
-<%= link_to 'Delete', '' %>
+<%= link_to 'Edit', edit_order_path(@order) %>
+<%= link_to 'Delete', @order, method: :delete %>
