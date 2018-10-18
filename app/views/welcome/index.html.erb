@@ -1,2 +1,59 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<section class='welcome-section' id='welcome'>
+  <div class='welcome-div' id='welcome-header-div'>
+    <!-- Header 👇 -->
+    <%= content_tag :h1, "RLV Cookies 'n' Cream", id: 'welcome-header' %>
+  </div>
+
+  <div class='welcome-div' id='welcome-art-div'>
+    <!-- Michael's art 👇 -->
+    <%= image_tag 'http://via.placeholder.com/700x300?text=+', id: 'welcome-art' %>
+  </div>
+
+  <div class='welcome-div' id='welcome-scroll-buttons-div'>
+    <!-- Scroll buttons 👇 -->
+    <%= link_to 'About', root_path(anchor: 'about'), class: 'welcome-scroll-button' %>
+    <%= link_to 'Cookies', root_path(anchor: 'cookies'), class: 'welcome-scroll-button' %>
+    <%= link_to 'Order', root_path(anchor: 'order'), class: 'welcome-scroll-button' %>
+    <%= link_to 'Contact', root_path(anchor: 'contact'), class: 'welcome-scroll-button' %>
+  </div>
+</section>
+
+<section class='welcome-section' id='about'>
+  <div class='welcome-div' id='about-images-div'>
+    <!-- Images of Lauren and family 👇 -->
+    <%= image_tag 'http://via.placeholder.com/225.png?text=+', class: 'about-image' %>
+    <%= image_tag 'http://via.placeholder.com/525x225.png?text=+', class: 'about-image' %>
+  </div>
+
+  <div class='welcome-div' id='about-bio-div'>
+    <!-- Bio 👇 -->
+    <%= content_tag :p, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', id: 'about-bio' %>
+  </div>
+</section>
+
+<section class='welcome-section' id='cookies'>
+  <div class='welcome-div' id='cookies-instagram-grid-div'>
+    <!-- Instagram grid 👇 -->
+  </div>
+</section>
+
+<section class='welcome-section' id='order'>
+  <div class='welcome-div' id='order-button-div'>
+    <!-- Order button 👇 -->
+    <%= link_to 'Order cookies', '', id: 'order-button' %>
+  </div>
+</section>
+
+<section class='welcome-section' id='contact'>
+  <div class='welcome-div' id='contact-button-div'>
+    <!-- Contact button 👇 -->
+    <%= link_to 'Contact me', '', id: 'contact-button' %>
+  </div>
+
+  <div class='welcome-div' id='contact-social-icons-div'>
+    <!-- Social icons 👇 -->
+    <%= link_to 'https://www.instagram.com/rlvcookiesncream', class: 'contact-social-icon' do %>
+      <i class='fab fa-instagram fa-2x'></i>
+    <% end %>
+  </div>
+</section>
