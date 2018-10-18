@@ -1,2 +1,5 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<%= form_with url: sessions_path do |form| %>
+  <%= form.email_field :email, placeholder: 'Email' %><br>
+  <%= form.password_field :password, placeholder: 'Password' %><br>
+  <%= form.submit 'Log in' %>
+<% end %>
