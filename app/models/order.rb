@@ -1,4 +1,8 @@
 class Order < ApplicationRecord
+  belongs_to :user
+  has_one :pickup
+  has_one :delivery
+
   def self.view_count(order)
     counts = [
       [6, 'Half dozen'],
