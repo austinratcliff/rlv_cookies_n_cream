@@ -1,0 +1,18 @@
+<h3>Order details</h3>
+
+<p><strong>Count:</strong> <%= Order.view_count(@order) %></p>
+<p><strong>Description:</strong> <%= @order.description %></p>
+<p><strong>Delivery?</strong> <%= Order.view_is_delivery(@order) %></p>
+
+<% if @order.is_delivery %>
+  <h3>Delivery details</h3>
+
+  <!-- List delivery here -->
+<% else %>
+  <h3>Pickup details</h3>
+
+  <!-- List pickup here -->
+<% end %>
+
+<%= link_to 'Edit', edit_order_path(@order) %>
+<%= link_to 'Delete', @order, method: :delete %>
