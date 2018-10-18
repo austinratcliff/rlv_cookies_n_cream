@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authorize
+
   def new
     @order = Order.new
     @counts = [
