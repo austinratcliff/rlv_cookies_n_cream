@@ -1,0 +1,5 @@
+<%= form_with model: @pickup, url: order_pickups_path(@order) do |form| %>
+  <%= form.label :pickup_at, 'Pickup date and time:' %><br>
+  <%= form.datetime_field :pickup_at %><br>
+  <%= form.submit 'Submit order' %>
+<% end %>

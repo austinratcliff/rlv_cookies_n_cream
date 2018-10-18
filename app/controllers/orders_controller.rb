@@ -17,7 +17,11 @@ class OrdersController < ApplicationController
     @order.user_id = current_user.id
 
     if @order.save
-      redirect_to @order
+      if @order.is_delivery
+        # redirect_to new_order_delivery_path(@order)
+      else
+        redirect_to new_order_pickup_path(@order)
+      end
     else
       render 'new'
     end
@@ -42,7 +46,19 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
 
     if @order.update_attributes(order_params)
-      redirect_to @order
+      if @order.is_delivery
+        # if @order.delivery
+        #   redirect_to edit_order_delivery_path(@order, @order.delivery)
+        # else
+        #   redirect_to new_order_delivery_path(@order)
+        # end
+      else
+        if @order.pickup
+          redirect_to edit_order_pickup_path(@order, @order.pickup)
+        else
+          redirect_to new_order_pickup_path(@order)
+        end
+      end
     else
       render 'edit'
     end
