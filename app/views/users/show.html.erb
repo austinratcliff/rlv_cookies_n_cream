@@ -9,4 +9,8 @@
 
 <h3>Orders</h3>
 
-<!-- List orders here -->
+<ul>
+  <% @user.orders.each do |order| %>
+    <li><%= link_to "#{order.description[0, 50]}#{' ...' if order.description.length > 50}", order %></li>
+  <% end %>
+</ul>
