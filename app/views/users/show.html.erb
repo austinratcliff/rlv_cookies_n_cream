@@ -4,8 +4,8 @@
 <p><strong>Email:</strong> <%= @user.email %></p>
 <p><strong>Phone:</strong> <%= @user.phone %></p>
 
-<%= link_to 'Edit', '' %>
-<%= link_to 'Delete', '' %>
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Delete', @user, method: :delete %>
 
 <h3>Orders</h3>
 
