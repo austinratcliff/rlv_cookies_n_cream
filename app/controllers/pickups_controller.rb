@@ -1,4 +1,6 @@
 class PickupsController < ApplicationController
+  before_action :authorize
+
   def new
     @order = Order.find(params[:order_id])
     @pickup = Pickup.new
