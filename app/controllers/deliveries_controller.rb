@@ -1,4 +1,6 @@
 class DeliveriesController < ApplicationController
+  before_action :authorize
+
   def new
     @order = Order.find(params[:order_id])
     @delivery = Delivery.new
