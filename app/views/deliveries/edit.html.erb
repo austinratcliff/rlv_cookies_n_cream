@@ -1,0 +1,7 @@
+<%= form_with model: @delivery, url: order_delivery_path(@order), method: :put do |form| %>
+  <%= form.label :address, 'Delivery address:' %><br>
+  <%= form.text_area :address %><br>
+  <%= form.label :deliver_at, 'Delivery date and time:' %><br>
+  <%= form.datetime_field :deliver_at %><br>
+  <%= form.submit 'Save' %>
+<% end %>

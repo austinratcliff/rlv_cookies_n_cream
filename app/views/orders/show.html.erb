@@ -7,7 +7,8 @@
 <% if @order.is_delivery %>
   <h3>Delivery details</h3>
 
-  <!-- List delivery here -->
+  <p><strong>Delivery address:</strong> <%= @order.delivery.address %></p>
+  <p><strong>Delivery date and time:</strong> <%= @order.delivery.deliver_at.strftime('%B %-d, %Y at %I:%M%P') %></p>
 <% else %>
   <h3>Pickup details</h3>
 
