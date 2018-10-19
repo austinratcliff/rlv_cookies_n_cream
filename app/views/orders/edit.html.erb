@@ -4,6 +4,7 @@
   <%= form.label :description, 'Description:' %><br>
   <%= form.text_area :description %><br>
   <%= form.label :is_delivery, 'Delivery?' %><br>
+  <%= form.hidden_field :is_delivery, {value: false} %>
   <%= form.check_box :is_delivery, {checked: @order.is_delivery}, true, false %><br>
   <%= form.submit 'Next' %>
 <% end %>
