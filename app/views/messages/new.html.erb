@@ -1,2 +1,5 @@
-<h1>Messages#new</h1>
-<p>Find me in app/views/messages/new.html.erb</p>
+<%= form_with model: @message do |form| %>
+  <%= form.label :body, 'Message:' %><br>
+  <%= form.text_area :body %><br>
+  <%= form.submit 'Send' %>
+<% end %>
