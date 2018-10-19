@@ -1,0 +1,5 @@
+<%= form_with model: @message do |form| %>
+  <%= form.label :body, 'Message:' %><br>
+  <%= form.text_area :body %><br>
+  <%= form.submit 'Send' %>
+<% end %>
