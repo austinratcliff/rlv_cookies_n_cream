@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_action :authorize
+
   def new
     @message = Message.new
   end
