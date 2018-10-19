@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       if @order.is_delivery
-        # redirect_to new_order_delivery_path(@order)
+        redirect_to new_order_delivery_path(@order)
       else
         redirect_to new_order_pickup_path(@order)
       end
@@ -47,11 +47,11 @@ class OrdersController < ApplicationController
 
     if @order.update_attributes(order_params)
       if @order.is_delivery
-        # if @order.delivery
-        #   redirect_to edit_order_delivery_path(@order, @order.delivery)
-        # else
-        #   redirect_to new_order_delivery_path(@order)
-        # end
+        if @order.delivery
+          redirect_to edit_order_delivery_path(@order, @order.delivery)
+        else
+          redirect_to new_order_delivery_path(@order)
+        end
       else
         if @order.pickup
           redirect_to edit_order_pickup_path(@order, @order.pickup)
