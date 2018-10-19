@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_id: 1
+  address: MyText
+  deliver_at: 2018-10-18 20:23:07
+
+two:
+  order_id: 1
+  address: MyText
+  deliver_at: 2018-10-18 20:23:07
