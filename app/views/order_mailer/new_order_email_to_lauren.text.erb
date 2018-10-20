@@ -1,0 +1,24 @@
+New order!
+
+👤 From
+
+Name: <%= @order.user.name %>
+Email: <%= @order.user.email %>
+Phone: <%= @order.user.phone %>
+
+🍪 Order details
+
+Count: <%= Order.view_count(@order) %>
+Description: <%= @order.description %>
+
+<% if @order.pickup %>
+  🏠 Pickup details
+
+  Pickup address: 812 NW 194th Ter, Edmond, OK 73012
+  Pickup date and time: <%= @order.pickup.pickup_at.strftime('%B %-d, %Y at %I:%M%P') %>
+<% elsif @order.delivery %>
+  📦 Delivery details
+
+  Delivery address: <%= @order.delivery.address %>
+  Delivery date and time: <%= @order.delivery.deliver_at.strftime('%B %-d, %Y at %I:%M%P') %>
+<% end %>

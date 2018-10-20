@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+
+  <body>
+    <h1>Your order was submitted!</h1>
+
+    <p>Hi <%= @order.user.first_name %>! 👋</p>
+
+    <p>Thank you for your order! Below are the details that I received — if anything is incorrect, then please feel free to reply here and let me know.</p>
+
+    <h3>🍪 Order details</h3>
+
+    <p><strong>Count:</strong> <%= Order.view_count(@order) %></p>
+    <p><strong>Description:</strong> <%= @order.description %></p>
+
+    <% if @order.pickup %>
+      <h3>🏠 Pickup details</h3>
+
+      <p><strong>Pickup address:</strong> 812 NW 194th Ter, Edmond, OK 73012</p>
+      <p><strong>Pickup date and time:</strong> <%= @order.pickup.pickup_at.strftime('%B %-d, %Y at %I:%M%P') %></p>
+    <% elsif @order.delivery %>
+      <h3>📦 Delivery details</h3>
+
+      <p><strong>Delivery address:</strong> <%= @order.delivery.address %></p>
+      <p><strong>Delivery date and time:</strong> <%= @order.delivery.deliver_at.strftime('%B %-d, %Y at %I:%M%P') %></p>
+    <% end %>
+
+    <p>I'll contact you for a final order confirmation to discuss pricing, to get any additional details that I may need, and/or to answer any questions.</p>
+
+    <p>Until then, cheers!</p>
+
+    <p id='mailer-signature'>Lauren</p>
+  </body>
+</html>
