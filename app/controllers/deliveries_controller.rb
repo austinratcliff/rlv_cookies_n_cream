@@ -13,6 +13,8 @@ class DeliveriesController < ApplicationController
 
     if @delivery.save
       @order.pickup.destroy if @order.pickup
+      OrderMailer.new_order_email_to_user(@order).deliver_now
+      OrderMailer.new_order_email_to_lauren(@order).deliver_now
       redirect_to @order
     else
       render 'new'
