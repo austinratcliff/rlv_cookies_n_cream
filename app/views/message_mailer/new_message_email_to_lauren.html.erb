@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+
+  <body>
+    <h1>New message!</h1>
+
+    <h3>👤 From</h3>
+
+    <p><strong>Name:</strong> <%= @message.user.name %></p>
+    <p><strong>Email:</strong> <%= @message.user.email %></p>
+    <p><strong>Phone:</strong> <%= @message.user.phone %></p>
+
+    <h3>💬 Message</h3>
+
+    <blockquote>
+      <p><%= @message.body %></p>
+    </blockquote>
+  </body>
+</html>

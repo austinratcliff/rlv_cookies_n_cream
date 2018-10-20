@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+
+  <body>
+    <h1>Your message was sent!</h1>
+
+    <p>Hi <%= @message.user.first_name %>! 👋</p>
+
+    <p>Thank you for your message!</p>
+
+    <blockquote>
+      <p><%= @message.body %></p>
+    </blockquote>
+
+    <p>I'll respond as soon as possible.</p>
+
+    <p>Until then, cheers!</p>
+
+    <p id='mailer-signature'>Lauren</p>
+  </body>
+</html>
