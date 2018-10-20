@@ -1,0 +1,28 @@
+Your order was submitted!
+
+Hi <%= @order.user.first_name %>! 👋
+
+Thank you for your order! Below are the details that I received — if anything is incorrect, then please feel free to reply here and let me know.
+
+🍪 Order details
+
+Count: <%= Order.view_count(@order) %>
+Description: <%= @order.description %>
+
+<% if @order.pickup %>
+  🏠 Pickup details
+
+  Pickup address: 812 NW 194th Ter, Edmond, OK 73012
+  Pickup date and time: <%= @order.pickup.pickup_at.strftime('%B %-d, %Y at %I:%M%P') %>
+<% elsif @order.delivery %>
+  📦 Delivery details</h3>
+
+  Delivery address: <%= @order.delivery.address %>
+  Delivery date and time: <%= @order.delivery.deliver_at.strftime('%B %-d, %Y at %I:%M%P') %>
+<% end %>
+
+I'll contact you for a final order confirmation to discuss pricing, to get any additional details that I may need, and/or to answer any questions.
+
+Until then, cheers!
+
+Lauren
