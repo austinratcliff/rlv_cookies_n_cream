@@ -31,43 +31,43 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
-  def edit
-    @order = Order.find(params[:id])
-    @counts = [
-      [6, 'Half dozen'],
-      [12, 'One dozen'],
-      [24, 'Two dozens'],
-      [36, 'Three dozens'],
-      [nil, "Let's chat"]
-    ]
-  end
-
-  def update
-    @order = Order.find(params[:id])
-
-    if @order.update_attributes(order_params)
-      if @order.is_delivery
-        if @order.delivery
-          redirect_to edit_order_delivery_path(@order, @order.delivery)
-        else
-          redirect_to new_order_delivery_path(@order)
-        end
-      else
-        if @order.pickup
-          redirect_to edit_order_pickup_path(@order, @order.pickup)
-        else
-          redirect_to new_order_pickup_path(@order)
-        end
-      end
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    Order.find(params[:id]).destroy
-    redirect_to current_user
-  end
+  # def edit
+  #   @order = Order.find(params[:id])
+  #   @counts = [
+  #     [6, 'Half dozen'],
+  #     [12, 'One dozen'],
+  #     [24, 'Two dozens'],
+  #     [36, 'Three dozens'],
+  #     [nil, "Let's chat"]
+  #   ]
+  # end
+  #
+  # def update
+  #   @order = Order.find(params[:id])
+  #
+  #   if @order.update_attributes(order_params)
+  #     if @order.is_delivery
+  #       if @order.delivery
+  #         redirect_to edit_order_delivery_path(@order, @order.delivery)
+  #       else
+  #         redirect_to new_order_delivery_path(@order)
+  #       end
+  #     else
+  #       if @order.pickup
+  #         redirect_to edit_order_pickup_path(@order, @order.pickup)
+  #       else
+  #         redirect_to new_order_pickup_path(@order)
+  #       end
+  #     end
+  #   else
+  #     render 'edit'
+  #   end
+  # end
+  #
+  # def destroy
+  #   Order.find(params[:id]).destroy
+  #   redirect_to current_user
+  # end
 
   private
 

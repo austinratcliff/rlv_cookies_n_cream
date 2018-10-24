@@ -1,5 +1,8 @@
-<%= form_with model: @pickup, url: order_pickups_path(@order) do |form| %>
+<!-- <%= form_with model: @pickup, url: order_pickups_path(@order) do |form| %>
   <%= form.label :pickup_at, 'Pickup date and time:' %><br>
   <%= form.datetime_field :pickup_at %><br>
   <%= form.submit 'Submit order' %>
-<% end %>
+<% end %> -->
+
+<div class='calendly-inline-widget' data-url='https://calendly.com/rlvcookiesncream/pickups?utm_source=<%= @order.id %>' style='min-width: 320px; height: 580px;'></div>
+<script type='text/javascript' src='https://assets.calendly.com/assets/external/widget.js'></script>

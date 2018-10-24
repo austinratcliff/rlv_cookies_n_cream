@@ -21,21 +21,21 @@ class PickupsController < ApplicationController
     end
   end
 
-  def edit
-    @order = Order.find(params[:order_id])
-    @pickup = Pickup.find(params[:id])
-  end
-
-  def update
-    @order = Order.find(params[:order_id])
-    @pickup = Pickup.find(params[:id])
-
-    if @pickup.update_attributes(pickup_params)
-      redirect_to @order
-    else
-      render 'edit'
-    end
-  end
+  # def edit
+  #   @order = Order.find(params[:order_id])
+  #   @pickup = Pickup.find(params[:id])
+  # end
+  #
+  # def update
+  #   @order = Order.find(params[:order_id])
+  #   @pickup = Pickup.find(params[:id])
+  #
+  #   if @pickup.update_attributes(pickup_params)
+  #     redirect_to @order
+  #   else
+  #     render 'edit'
+  #   end
+  # end
 
   private
 
