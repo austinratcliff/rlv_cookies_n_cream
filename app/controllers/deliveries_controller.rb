@@ -21,21 +21,21 @@ class DeliveriesController < ApplicationController
     end
   end
 
-  def edit
-    @order = Order.find(params[:order_id])
-    @delivery = Delivery.find(params[:id])
-  end
-
-  def update
-    @order = Order.find(params[:order_id])
-    @delivery = Delivery.find(params[:id])
-
-    if @delivery.update_attributes(delivery_params)
-      redirect_to @order
-    else
-      render 'edit'
-    end
-  end
+  # def edit
+  #   @order = Order.find(params[:order_id])
+  #   @delivery = Delivery.find(params[:id])
+  # end
+  #
+  # def update
+  #   @order = Order.find(params[:order_id])
+  #   @delivery = Delivery.find(params[:id])
+  #
+  #   if @delivery.update_attributes(delivery_params)
+  #     redirect_to @order
+  #   else
+  #     render 'edit'
+  #   end
+  # end
 
   private
 
