@@ -15,23 +15,26 @@
   </head>
 
   <body>
-    <nav>
-      <%= link_to image_tag('http://via.placeholder.com/175x75.png?text=+'), root_path, id: 'nav-logo' %>
+    <nav class='navbar sticky-top d-flex justify-content-between navbar-expand navbar-light bg-white'>
+      <%= link_to image_tag('nav-logo.svg'), root_path, id: 'nav-logo', class: 'navbar-brand' %>
 
-      <div class='nav-div' id=nav-links>
+      <div class='navbar-nav'>
         <% if logged_in? %>
-          <%= link_to 'Profile', current_user, class: 'nav-link' %>
-          <%= link_to 'Log out', session_path(current_user), method: :delete, class: 'nav-link' %>
+          <%= link_to 'Profile', current_user, class: 'nav-item nav-link' %>
+          <%= link_to 'Log out', session_path(current_user), method: :delete, class: 'nav-item nav-link' %>
         <% else %>
-          <%= link_to 'Sign up', signup_path, class: 'nav-link' %>
-          <%= link_to 'Log in', login_path, class: 'nav-link' %>
+          <%= link_to 'Sign up', signup_path, class: 'nav-item nav-link' %>
+          <%= link_to 'Log in', login_path, class: 'nav-item nav-link' %>
         <% end %>
       </div>
     </nav>
 
-    <% flash.each do |message_type, message| %>
-      <div class='flash flash-<%= message_type %>'>
-        <%= message %>
+    <% flash.each do |alert_type, alert| %>
+      <div class='alert alert-<%= alert_type %> alert-dismissible fade show m-3'>
+        <%= alert %>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
       </div>
     <% end %>
 
