@@ -1,3 +1,120 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// W E L C O M E 👇
+// — — — — — — — — —
+
+#welcome {
+  height: calc(100vh - 66px);
+  width: auto;
+}
+
+#welcome-header {
+  font-family: 'Young Serif', serif;
+  font-size: 7vmin;
+}
+
+#welcome-art-div {
+  height: auto;
+  width: 100%;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #welcome-art-div {
+    height: auto;
+    width: 80%;
+  }
+}
+
+// A B O U T 👇
+// — — — — — — —
+
+#about {
+  background-color: #bdf7fb;
+  height: 100vh;
+  width: auto;
+  padding-top: 66px;
+}
+
+#about-image-div {
+  height: auto;
+  width: 80%;
+}
+
+#about-image {
+  filter: grayscale(100%);
+}
+
+#about-bio-div {
+  height: auto;
+  width: 100%;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #about-image-div {
+    height: auto;
+    width: 60%;
+  }
+
+  #about-bio-div {
+    height: auto;
+    width: 80%;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #about-image-div {
+    height: auto;
+    width: 40%;
+  }
+
+  #about-bio-div {
+    height: auto;
+    width: 60%;
+  }
+}
+
+// C O O K I E S 👇
+// — — — — — — — — —
+
+#cookies {
+  height: 100vh;
+  width: auto;
+  padding-top: 66px;
+}
+
+#cookies-instagram-grid-div {
+  height: auto;
+  width: 100%;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #cookies-instagram-grid-div {
+    height: auto;
+    width: 80%;
+  }
+}
+
+// O R D E R 👇
+// — — — — — — —
+
+#order {
+  background-color: #f68b5e;
+  height: 50vh;
+  width: auto;
+  padding-top: 66px;
+}
+
+// C O N T A C T 👇
+// — — — — — — — — —
+
+#contact {
+  background-color: #f68b5e;
+  height: 50vh;
+  width: auto;
+}

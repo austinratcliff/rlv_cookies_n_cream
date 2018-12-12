@@ -1,38 +1,37 @@
-<section class='welcome-section' id='welcome'>
-  <div class='welcome-div' id='welcome-header-div'>
+<section class='welcome-section d-flex flex-column justify-content-center align-items-center' id='welcome'>
+  <div class='welcome-div d-flex justify-content-center align-items-center' id='welcome-header-div'>
     <!-- Header 👇 -->
-    <%= content_tag :h1, "RLV Cookies 'n' Cream", id: 'welcome-header' %>
+    <%= content_tag :h1, "RLV Cookies 'n' Cream", id: 'welcome-header', class: 'm-0' %>
   </div>
 
-  <div class='welcome-div' id='welcome-art-div'>
+  <div class='welcome-div d-flex justify-content-center align-items-center' id='welcome-art-div'>
     <!-- Michael's art 👇 -->
-    <%= image_tag 'http://via.placeholder.com/700x300?text=+', id: 'welcome-art' %>
+    <%= image_tag 'welcome-art.png', id: 'welcome-art', class: 'img-fluid' %>
   </div>
 
-  <div class='welcome-div' id='welcome-scroll-buttons-div'>
+  <div class='welcome-div d-flex justify-content-center align-items-center' id='welcome-scroll-buttons-div'>
     <!-- Scroll buttons 👇 -->
-    <%= link_to 'About', root_path(anchor: 'about'), class: 'welcome-scroll-button' %>
-    <%= link_to 'Cookies', root_path(anchor: 'cookies'), class: 'welcome-scroll-button' %>
-    <%= link_to 'Order', root_path(anchor: 'order'), class: 'welcome-scroll-button' %>
-    <%= link_to 'Contact', root_path(anchor: 'contact'), class: 'welcome-scroll-button' %>
+    <%= link_to 'About', root_path(anchor: 'about'), class: 'welcome-scroll-button btn btn-lg mx-3' %>
+    <%= link_to 'Cookies', root_path(anchor: 'cookies'), class: 'welcome-scroll-button btn btn-lg mx-3' %>
+    <%= link_to 'Order', root_path(anchor: 'order'), class: 'welcome-scroll-button btn btn-lg mx-3' %>
+    <%= link_to 'Contact', root_path(anchor: 'contact'), class: 'welcome-scroll-button btn btn-lg mx-3' %>
   </div>
 </section>
 
-<section class='welcome-section' id='about'>
-  <div class='welcome-div' id='about-images-div'>
+<section class='welcome-section d-flex flex-column justify-content-center align-items-center' id='about'>
+  <div class='welcome-div d-flex justify-content-center align-items-center mb-3' id='about-image-div'>
     <!-- Images of Lauren and family 👇 -->
-    <%= image_tag 'http://via.placeholder.com/225.png?text=+', class: 'about-image' %>
-    <%= image_tag 'http://via.placeholder.com/525x225.png?text=+', class: 'about-image' %>
+    <%= image_tag 'about-image.jpg', id: 'about-image', class: 'img-fluid' %>
   </div>
 
-  <div class='welcome-div' id='about-bio-div'>
+  <div class='welcome-div d-flex justify-content-center align-items-center mt-3' id='about-bio-div'>
     <!-- Bio 👇 -->
     <%= content_tag :p, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', id: 'about-bio' %>
   </div>
 </section>
 
-<section class='welcome-section' id='cookies'>
-  <div class='welcome-div' id='cookies-instagram-grid-div'>
+<section class='welcome-section d-flex flex-column justify-content-center align-items-center' id='cookies'>
+  <div class='welcome-div d-flex justify-content-center align-items-center' id='cookies-instagram-grid-div'>
     <!-- Instagram grid 👇 -->
     <script src='https://snapwidget.com/js/snapwidget.js'></script>
     <link rel='stylesheet' href='https://snapwidget.com/stylesheets/snapwidget-lightbox.css'>
@@ -41,20 +40,20 @@
   </div>
 </section>
 
-<section class='welcome-section' id='order'>
-  <div class='welcome-div' id='order-button-div'>
+<section class='welcome-section d-flex flex-column justify-content-center align-items-center' id='order'>
+  <div class='welcome-div d-flex justify-content-center align-items-center' id='order-button-div'>
     <!-- Order button 👇 -->
-    <%= link_to 'Order cookies', new_order_path, id: 'order-button' %>
+    <%= link_to 'Order cookies', new_order_path, id: 'order-button', class: 'btn btn-lg' %>
   </div>
 </section>
 
-<section class='welcome-section' id='contact'>
-  <div class='welcome-div' id='contact-button-div'>
+<section class='welcome-section d-flex flex-column justify-content-center align-items-center' id='contact'>
+  <div class='welcome-div d-flex justify-content-center align-items-center' id='contact-button-div'>
     <!-- Contact button 👇 -->
-    <%= link_to 'Contact me', new_message_path, id: 'contact-button' %>
+    <%= link_to 'Contact me', new_message_path, id: 'contact-button', class: 'btn btn-lg' %>
   </div>
 
-  <div class='welcome-div' id='contact-social-icons-div'>
+  <div class='welcome-div d-flex justify-content-center align-items-center' id='contact-social-icons-div'>
     <!-- Social icons 👇 -->
     <%= link_to 'https://www.instagram.com/rlvcookiesncream', class: 'contact-social-icon' do %>
       <i class='fab fa-instagram fa-2x'></i>
