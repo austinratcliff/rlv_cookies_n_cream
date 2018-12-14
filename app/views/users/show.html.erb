@@ -1,16 +1,46 @@
-<h3>Details</h3>
+<div class='nav nav-tabs nav-justified'>
+  <a class='nav-item nav-link active' data-toggle='tab' href='#details'><h5 class='user-header m-0'>👤 Details</h5></a>
+  <a class='nav-item nav-link' data-toggle='tab' href='#orders'><h5 class='user-header m-0'>🍪 Orders</h5></a>
+</div>
 
-<p><strong>Name:</strong> <%= @user.name %></p>
-<p><strong>Email:</strong> <%= @user.email %></p>
-<p><strong>Phone:</strong> <%= @user.phone %></p>
+<div class='tab-content position-fixed'>
+  <div class='tab-pane active' id='details'>
+    <div class='card'>
+      <div class='list-group list-group-flush'>
+        <p class='list-group-item'><strong>Name:</strong><br><%= @user.name %></p>
+        <p class='list-group-item'><strong>Email:</strong><br><%= @user.email %></p>
+        <p class='list-group-item'><strong>Phone:</strong><br><%= @user.phone %></p>
+      </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %>
-<%= link_to 'Delete', @user, method: :delete %>
+      <div class='card-body'>
+        <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-light btn-block' %>
+        <%= link_to 'Delete', @user, method: :delete, class: 'btn btn-light btn-block' %>
+      </div>
+    </div>
+  </div>
 
-<h3>Orders</h3>
-
-<ul>
-  <% @user.orders.each do |order| %>
-    <li><%= link_to "#{order.description[0, 50]}#{' ...' if order.description.length > 50}", order %></li>
-  <% end %>
-</ul>
+  <div class='tab-pane' id='orders'>
+    <% if @user.orders.any? %>
+      <div class='card-deck'>
+        <% @user.orders.each do |order| %>
+          <div class='card'>
+            <div class='card-body'>
+              <% if order.is_delivery %>
+                <h5 class='card-title'><strong>📦 Delivery — <%= order.count %> <%= 'cookie'.pluralize(order.count) %></strong></h5>
+                <p class='card-text'><%= order.description[0, 50] %><%= ' ...' if order.description.length > 50 %></p>
+                <p class='card-text'><%= order.delivery.deliver_at.strftime('%B %-d, %Y at %I:%M%P') %></p>
+              <% else %>
+                <h5 class='card-title'><strong>🏠 Pickup — <%= order.count %> <%= 'cookie'.pluralize(order.count) %></strong></h5>
+                <p class='card-text'><%= order.description[0, 50] %><%= ' ...' if order.description.length > 50 %></p>
+                <p class='card-text'><%= order.pickup.pickup_at.strftime('%B %-d, %Y at %I:%M%P') %></p>
+              <% end %>
+              <%= link_to 'View more', order, class: 'btn btn-light btn-block' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <%= link_to 'Order cookies', new_order_path, class: 'btn btn-lg btn-light' %>
+    <% end %>
+  </div>
+</div>
