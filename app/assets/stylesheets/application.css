@@ -35,3 +35,13 @@
  #nav-logo {
    width: 50px;
  }
+
+ .header {
+   font-family: 'Young Serif', serif;
+ }
+
+ .center {
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
