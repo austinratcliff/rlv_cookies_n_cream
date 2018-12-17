@@ -1,5 +1,5 @@
-<%= form_with model: @message do |form| %>
+<%= form_with class: 'center position-fixed', model: @message do |form| %>
   <%= form.label :body, 'Message:' %><br>
-  <%= form.text_area :body %><br>
-  <%= form.submit 'Send' %>
+  <%= form.text_area :body, class: 'form-control', cols: 50, rows: 10 %><br>
+  <%= form.submit 'Send', class: 'btn btn-light btn-block' %>
 <% end %>

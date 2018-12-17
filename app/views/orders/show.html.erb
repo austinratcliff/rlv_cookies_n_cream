@@ -1,24 +1,35 @@
-<h3>Order details</h3>
+<div class='card-deck center position-fixed'>
+  <div class='card'>
+    <div class='list-group list-group-flush'>
+      <h3 class='header list-group-item'>🍪 Order details</h3>
+      <p class='list-group-item'><strong>Count:</strong><br><%= Order.view_count(@order) %></p>
+      <p class='list-group-item'><strong>Description:</strong><br><%= @order.description %></p>
+      <p class='list-group-item'><strong>Delivery?</strong><br><%= Order.view_is_delivery(@order) %></p>
+    </div>
+  </div>
 
-<p><strong>Count:</strong> <%= Order.view_count(@order) %></p>
-<p><strong>Description:</strong> <%= @order.description %></p>
-<p><strong>Delivery?</strong> <%= Order.view_is_delivery(@order) %></p>
+  <div class='card'>
+    <% if @order.is_delivery %>
+      <div class='list-group list-group-flush'>
+        <h3 class='header list-group-item'>📦 Delivery details</h3>
+        <p class='list-group-item'><strong>Delivery address:</strong><br><%= @order.delivery.address %></p>
+        <p class='list-group-item'><strong>Delivery date and time:</strong><br><%= @order.delivery.deliver_at.strftime('%B %-d, %Y') %><br>at <%= @order.delivery.deliver_at.strftime('%I:%M%P') %></p>
+      </div>
+    <% else %>
+      <div class='list-group list-group-flush'>
+        <h3 class='header list-group-item'>🏠 Pickup details</h3>
+        <p class='list-group-item'><strong>Pickup address:</strong><br>812 NW 194th Ter<br>Edmond, OK 73012</p>
+        <p class='list-group-item'><strong>Pickup date and time:</strong><br><%= @order.pickup.pickup_at.strftime('%B %-d, %Y') %><br>at <%= @order.pickup.pickup_at.strftime('%I:%M%P') %></p>
+      </div>
+    <% end %>
 
-<% if @order.is_delivery %>
-  <h3>Delivery details</h3>
-
-  <p><strong>Delivery address:</strong> <%= @order.delivery.address %></p>
-  <p><strong>Delivery date and time:</strong> <%= @order.delivery.deliver_at.strftime('%B %-d, %Y at %I:%M%P') %></p>
-<% else %>
-  <h3>Pickup details</h3>
-
-  <p><strong>Pickup address:</strong> 812 NW 194th Ter, Edmond, OK 73012</p>
-  <p><strong>Pickup date and time:</strong> <%= @order.pickup.pickup_at.strftime('%B %-d, %Y at %I:%M%P') %></p>
-<% end %>
-
-<link href='https://assets.calendly.com/assets/external/widget.css' rel='stylesheet'>
-<script src='https://assets.calendly.com/assets/external/widget.js' type='text/javascript'></script>
-<a href='' onclick="Calendly.showPopupWidget('<%= @order.cancel_url %>'); return false;">Cancel</a>
+    <div class='card-footer'>
+      <link href='https://assets.calendly.com/assets/external/widget.css' rel='stylesheet'>
+      <script src='https://assets.calendly.com/assets/external/widget.js' type='text/javascript'></script>
+      <a href='' onclick="Calendly.showPopupWidget('<%= @order.cancel_url %>'); return false;">🚫 Cancel</a>
+    </div>
+  </div>
+</div>
 
 <!-- <%= link_to 'Cancel', @order.cancel_url, target: '_blank' %>
 
