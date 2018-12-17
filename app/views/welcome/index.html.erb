@@ -1,7 +1,7 @@
 <section class='welcome-section d-flex flex-column justify-content-center align-items-center' id='welcome'>
   <div class='welcome-div d-flex justify-content-center align-items-center' id='welcome-header-div'>
     <!-- Header 👇 -->
-    <%= content_tag :h1, "RLV Cookies 'n' Cream", id: 'welcome-header', class: 'm-0' %>
+    <%= content_tag :h1, '', id: 'welcome-header', class: 'm-0' %>
   </div>
 
   <div class='welcome-div d-flex justify-content-center align-items-center' id='welcome-art-div'>
@@ -36,7 +36,7 @@
     <script src='https://snapwidget.com/js/snapwidget.js'></script>
     <link rel='stylesheet' href='https://snapwidget.com/stylesheets/snapwidget-lightbox.css'>
     <script src='https://snapwidget.com/js/snapwidget-lightbox.js'></script>
-    <iframe src='https://snapwidget.com/embed/584824' class='snapwidget-widget' allowtransparency='true' frameborder='0' scrolling='no' style='border: none; overflow: hidden; width: 100%;'></iframe>
+    <iframe src='https://snapwidget.com/embed/635979' class='snapwidget-widget' allowtransparency='true' frameborder='0' scrolling='no' style='border: none; overflow: hidden; width: 100%;'></iframe>
   </div>
 </section>
 
@@ -60,3 +60,80 @@
     <% end %>
   </div>
 </section>
+
+<button class='btn btn-lg btn-light shadow-sm m-3 position-fixed' id='welcome-scroll-button-top'>🔝</button>
+
+<!-- Welcome header animation on load 👇 -->
+<script>
+  $(document).ready(function() {
+    let index = 0;
+    const text = "RLV Cookies 'n' Cream";
+
+    function typeWriter() {
+      if (index < text.length ) {
+        $('#welcome-header').append(text.charAt(index));
+        index++;
+        setTimeout(typeWriter, 200);
+      }
+    }
+
+    $('#welcome-header').empty();
+    typeWriter();
+  });
+</script>
+
+<!-- Welcome scroll buttons animation on click 👇 -->
+<script>
+  $(document).ready(function() {
+    $('.welcome-scroll-button').on('click', function(event) {
+      event.preventDefault();
+
+      const hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 1000);
+    });
+
+    $('#welcome-scroll-button-top').on('click', function(event) {
+      event.preventDefault();
+
+      $('html, body').animate({
+        scrollTop: $('body').offset().top
+      }, 1000);
+    });
+  });
+</script>
+
+<!-- Button group vertical variation on load/resize 👇 -->
+<script>
+  $(document).ready(function() {
+    const $window = $(window);
+
+    $window.bind('load resize', function() {
+      if ($window.width() <= 576) {
+        $('#welcome-scroll-buttons-div').addClass('btn-group-vertical');
+      } else {
+        $('#welcome-scroll-buttons-div').removeClass('btn-group-vertical');
+      }
+    });
+  });
+</script>
+
+<!-- Welcome scroll button top animation on load/scroll 👇 -->
+<script>
+  $(document).ready(function() {
+    const $window = $(window);
+    const $button = $('#welcome-scroll-button-top');
+
+    $window.bind('load scroll', function() {
+      const scrollTop = $window.scrollTop();
+
+      if (scrollTop > 631) {
+        $button.fadeIn('fast');
+      } else {
+        $button.fadeOut('fast');
+      }
+    });
+  });
+</script>

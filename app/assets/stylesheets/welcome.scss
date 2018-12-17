@@ -15,9 +15,19 @@
   font-size: 7vmin;
 }
 
+#welcome-header:before {
+  content: '\a0';
+}
+
 #welcome-art-div {
   height: auto;
   width: 100%;
+}
+
+#welcome-scroll-button-top {
+  bottom: 0;
+  left: 0;
+  display: none;
 }
 
 // Large devices (desktops, 992px and up)
@@ -89,14 +99,19 @@
 
 #cookies-instagram-grid-div {
   height: auto;
-  width: 100%;
+  width: 80%;
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
   #cookies-instagram-grid-div {
-    height: auto;
-    width: 80%;
+    height: 80%;
+    width: auto;
+  }
+
+  .snapwidget-widget {
+    height: 100%;
+    width: auto;
   }
 }
 
