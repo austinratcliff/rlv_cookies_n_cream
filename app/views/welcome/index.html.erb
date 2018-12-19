@@ -1,7 +1,7 @@
 <section class='welcome-section d-flex flex-column justify-content-center align-items-center' id='welcome'>
   <div class='welcome-div d-flex justify-content-center align-items-center' id='welcome-header-div'>
     <!-- Header 👇 -->
-    <%= content_tag :h1, '', id: 'welcome-header', class: 'm-0' %>
+    <%= content_tag :h1, "RLV Cookies 'n' Cream", id: 'welcome-header', class: 'm-0' %>
   </div>
 
   <div class='welcome-div d-flex justify-content-center align-items-center' id='welcome-art-div'>
@@ -11,10 +11,10 @@
 
   <div class='welcome-div d-flex justify-content-center align-items-center' id='welcome-scroll-buttons-div'>
     <!-- Scroll buttons 👇 -->
-    <%= link_to 'About', root_path(anchor: 'about'), class: 'welcome-scroll-button btn btn-lg mx-3' %>
-    <%= link_to 'Cookies', root_path(anchor: 'cookies'), class: 'welcome-scroll-button btn btn-lg mx-3' %>
-    <%= link_to 'Order', root_path(anchor: 'order'), class: 'welcome-scroll-button btn btn-lg mx-3' %>
-    <%= link_to 'Contact', root_path(anchor: 'contact'), class: 'welcome-scroll-button btn btn-lg mx-3' %>
+    <%= link_to 'About', root_path(anchor: 'about'), class: 'welcome-scroll-button btn btn-lg btn-light mx-3 mt-1' %>
+    <%= link_to 'Cookies', root_path(anchor: 'cookies'), class: 'welcome-scroll-button btn btn-lg btn-light mx-3 mt-1' %>
+    <%= link_to 'Order', root_path(anchor: 'order'), class: 'welcome-scroll-button btn btn-lg btn-light mx-3 mt-1' %>
+    <%= link_to 'Contact', root_path(anchor: 'contact'), class: 'welcome-scroll-button btn btn-lg btn-light mx-3 mt-1' %>
   </div>
 </section>
 
@@ -43,20 +43,20 @@
 <section class='welcome-section d-flex flex-column justify-content-center align-items-center' id='order'>
   <div class='welcome-div d-flex justify-content-center align-items-center' id='order-button-div'>
     <!-- Order button 👇 -->
-    <%= link_to 'Order cookies', new_order_path, id: 'order-button', class: 'btn btn-lg' %>
+    <%= link_to '🍪 Order cookies', new_order_path, id: 'order-button', class: 'btn btn-lg btn-light' %>
   </div>
 </section>
 
-<section class='welcome-section d-flex flex-column justify-content-center align-items-center' id='contact'>
+<section class='welcome-section d-flex flex-column justify-content-between align-items-center' id='contact'>
   <div class='welcome-div d-flex justify-content-center align-items-center' id='contact-button-div'>
     <!-- Contact button 👇 -->
-    <%= link_to 'Contact me', new_message_path, id: 'contact-button', class: 'btn btn-lg' %>
+    <%= link_to '💬 Contact me', new_message_path, id: 'contact-button', class: 'btn btn-lg btn-light' %>
   </div>
 
   <div class='welcome-div d-flex justify-content-center align-items-center' id='contact-social-icons-div'>
     <!-- Social icons 👇 -->
     <%= link_to 'https://www.instagram.com/rlvcookiesncream', class: 'contact-social-icon' do %>
-      <i class='fab fa-instagram fa-2x'></i>
+      <i class='fab fa-instagram fa-2x p-2'></i>
     <% end %>
   </div>
 </section>
@@ -64,7 +64,7 @@
 <button class='btn btn-lg btn-light shadow-sm m-3 position-fixed' id='welcome-scroll-button-top'>🔝</button>
 
 <!-- Welcome header animation on load 👇 -->
-<script>
+<!-- <script>
   $(document).ready(function() {
     let index = 0;
     const text = "RLV Cookies 'n' Cream";
@@ -80,7 +80,7 @@
     $('#welcome-header').empty();
     typeWriter();
   });
-</script>
+</script> -->
 
 <!-- Welcome scroll buttons animation on click 👇 -->
 <script>

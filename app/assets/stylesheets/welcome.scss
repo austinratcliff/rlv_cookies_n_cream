@@ -15,9 +15,9 @@
   font-size: 7vmin;
 }
 
-#welcome-header:before {
-  content: '\a0';
-}
+// #welcome-header:before {
+//   content: '\a0';
+// }
 
 #welcome-art-div {
   height: auto;
@@ -59,7 +59,7 @@
 
 #about-bio-div {
   height: auto;
-  width: 100%;
+  width: 80%;
 }
 
 // Medium devices (tablets, 768px and up)
@@ -132,4 +132,14 @@
   background-color: #f68b5e;
   height: 50vh;
   width: auto;
+}
+
+#contact-social-icons-div {
+  background-color: white;
+  height: auto;
+  width: 100%;
+}
+
+.contact-social-icon {
+  color: #212529;
 }
