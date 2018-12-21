@@ -1,9 +1,15 @@
-<%= form_with class: 'center position-fixed', model: @user do |form| %>
-  <%= form.text_field :first_name, placeholder: 'First name', class: 'form-control' %><br>
-  <%= form.text_field :last_name, placeholder: 'Last name', class: 'form-control' %><br>
-  <%= form.email_field :email, placeholder: 'Email', class: 'form-control' %><br>
-  <%= form.phone_field :phone, placeholder: 'Phone', class: 'form-control' %><br>
-  <%= form.password_field :password, placeholder: 'Password', class: 'form-control' %><br>
-  <%= form.password_field :password_confirmation, placeholder: 'Password confirmation', class: 'form-control' %><br>
-  <%= form.submit 'Sign up', class: 'btn btn-light btn-block' %>
-<% end %>
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-6 mx-auto'>
+      <%= form_with model: @user do |form| %>
+        <%= form.text_field :first_name, placeholder: 'First name', class: 'form-control' %><br>
+        <%= form.text_field :last_name, placeholder: 'Last name', class: 'form-control' %><br>
+        <%= form.email_field :email, placeholder: 'Email', class: 'form-control' %><br>
+        <%= form.phone_field :phone, placeholder: 'Phone', class: 'form-control' %><br>
+        <%= form.password_field :password, placeholder: 'Password', class: 'form-control' %><br>
+        <%= form.password_field :password_confirmation, placeholder: 'Password confirmation', class: 'form-control' %><br>
+        <%= form.submit 'Sign up', class: 'btn btn-light btn-block' %>
+      <% end %>
+    </div>
+  </div>
+</div>
