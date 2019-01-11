@@ -7,9 +7,11 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       log_in(user)
+      flash[:success] = "Welcome back #{user.first_name}!"
       redirect_to root_path
     else
-      render 'new'
+      flash[:danger] = "Hmm, something doesn't look right — please try again!"
+      redirect_to login_path
     end
   end
 

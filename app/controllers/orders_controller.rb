@@ -34,8 +34,10 @@ class OrdersController < ApplicationController
 
     if @order.save
       if @order.is_delivery
+        flash[:success] = 'Step 1 of 2 is complete — now schedule your delivery!'
         redirect_to new_order_delivery_path(@order)
       else
+        flash[:success] = 'Step 1 of 2 is complete — now schedule your pickup!'
         redirect_to new_order_pickup_path(@order)
       end
     else
