@@ -7,7 +7,12 @@ Thank you for your order! Below are the details that I received — if anything 
 🍪 Order details
 
 Count: <%= Order.view_count(@order) %>
-Description: <%= @order.description %>
+Description/Theme: <%= @order.description %>
+Colors:
+<%= @order.colors[0] %>
+<%= @order.colors[1] %>
+<%= @order.colors[2] %>
+Allergies: <%= @order.allergies %>
 
 <% if @order.pickup %>
   🏠 Pickup details

@@ -1,36 +1,41 @@
 <div class='container'>
   <div class='row'>
-    <div class='mx-auto'>
-      <div class='card-deck'>
-        <div class='card'>
-          <div class='list-group list-group-flush'>
-            <h3 class='header list-group-item'>🍪 Order details</h3>
-            <p class='list-group-item'><strong>Count:</strong><br><%= Order.view_count(@order) %></p>
-            <p class='list-group-item'><strong>Description:</strong><br><%= @order.description %></p>
-            <p class='list-group-item'><strong>Delivery?</strong><br><%= Order.view_is_delivery(@order) %></p>
-          </div>
+    <div class='col-lg-6 mx-auto'>
+      <div class='card mb-3'>
+        <div class='list-group list-group-flush'>
+          <h3 class='header list-group-item'>🍪 Order details</h3>
+          <p class='list-group-item'><strong>Count:</strong><br><%= Order.view_count(@order) %></p>
+          <p class='list-group-item'><strong>Description/Theme:</strong><br><%= @order.description %></p>
+          <p class='list-group-item'>
+            <strong>Colors:</strong><br>
+            <%= @order.colors[0] %><br>
+            <%= @order.colors[1] %><br>
+            <%= @order.colors[2] %>
+          </p>
+          <p class='list-group-item'><strong>Allergies:</strong><br><%= @order.allergies %></p>
+          <p class='list-group-item'><strong>Delivery?</strong><br><%= Order.view_is_delivery(@order) %></p>
         </div>
+      </div>
 
-        <div class='card'>
-          <% if @order.is_delivery %>
-            <div class='list-group list-group-flush'>
-              <h3 class='header list-group-item'>📦 Delivery details</h3>
-              <p class='list-group-item'><strong>Delivery address:</strong><br><%= @order.delivery.address %></p>
-              <p class='list-group-item'><strong>Delivery date and time:</strong><br><%= @order.delivery.deliver_at.strftime('%B %-d, %Y') %><br>at <%= @order.delivery.deliver_at.strftime('%I:%M%P') %></p>
-            </div>
-          <% else %>
-            <div class='list-group list-group-flush'>
-              <h3 class='header list-group-item'>🏠 Pickup details</h3>
-              <p class='list-group-item'><strong>Pickup address:</strong><br>812 NW 194th Ter<br>Edmond, OK 73012</p>
-              <p class='list-group-item'><strong>Pickup date and time:</strong><br><%= @order.pickup.pickup_at.strftime('%B %-d, %Y') %><br>at <%= @order.pickup.pickup_at.strftime('%I:%M%P') %></p>
-            </div>
-          <% end %>
-
-          <div class='card-footer'>
-            <link href='https://assets.calendly.com/assets/external/widget.css' rel='stylesheet'>
-            <script src='https://assets.calendly.com/assets/external/widget.js' type='text/javascript'></script>
-            <a href='' onclick="Calendly.showPopupWidget('<%= @order.cancel_url %>'); return false;">🚫 Cancel</a>
+      <div class='card'>
+        <% if @order.is_delivery %>
+          <div class='list-group list-group-flush'>
+            <h3 class='header list-group-item'>📦 Delivery details</h3>
+            <p class='list-group-item'><strong>Delivery address:</strong><br><%= @order.delivery.address %></p>
+            <p class='list-group-item'><strong>Delivery date and time:</strong><br><%= @order.delivery.deliver_at.strftime('%B %-d, %Y') %><br>at <%= @order.delivery.deliver_at.strftime('%I:%M%P') %></p>
           </div>
+        <% else %>
+          <div class='list-group list-group-flush'>
+            <h3 class='header list-group-item'>🏠 Pickup details</h3>
+            <p class='list-group-item'><strong>Pickup address:</strong><br>812 NW 194th Ter<br>Edmond, OK 73012</p>
+            <p class='list-group-item'><strong>Pickup date and time:</strong><br><%= @order.pickup.pickup_at.strftime('%B %-d, %Y') %><br>at <%= @order.pickup.pickup_at.strftime('%I:%M%P') %></p>
+          </div>
+        <% end %>
+
+        <div class='card-footer'>
+          <link href='https://assets.calendly.com/assets/external/widget.css' rel='stylesheet'>
+          <script src='https://assets.calendly.com/assets/external/widget.js' type='text/javascript'></script>
+          <a href='' onclick="Calendly.showPopupWidget('<%= @order.cancel_url %>'); return false;">🚫 Cancel</a>
         </div>
       </div>
     </div>
