@@ -54,6 +54,15 @@
 // A B O U T 👇
 // — — — — — — —
 
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 #about {
   background-color: #bdf7fb;
   height: 100vh;
