@@ -11,9 +11,11 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in(@user)
+      flash[:success] = "Welcome to RLV Cookies 'n' Cream!"
       redirect_to root_path
     else
-      render 'new'
+      flash[:danger] = "Hmm, something doesn't look right — please try again!"
+      redirect_to signup_path
     end
   end
 

@@ -14,7 +14,14 @@
     <h3>🍪 Order details</h3>
 
     <p><strong>Count:</strong> <%= Order.view_count(@order) %></p>
-    <p><strong>Description:</strong> <%= @order.description %></p>
+    <p><strong>Description/Theme:</strong> <%= @order.description %></p>
+    <p>
+      <strong>Colors:</strong><br>
+      <%= @order.colors[0] %><br>
+      <%= @order.colors[1] %><br>
+      <%= @order.colors[2] %>
+    </p>
+    <p><strong>Allergies:</strong><br><%= @order.allergies %></p>
 
     <% if @order.pickup %>
       <h3>🏠 Pickup details</h3>

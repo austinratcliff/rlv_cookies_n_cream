@@ -10,16 +10,34 @@ class OrdersController < ApplicationController
       [36, 'Three dozens'],
       [nil, "Let's chat"]
     ]
+    @colors = [
+      ['Red'],
+      ['Orange'],
+      ['Yellow'],
+      ['Green'],
+      ['Blue'],
+      ['Purple'],
+      ['Pink'],
+      ['White'],
+      ['Gray'],
+      ['Black'],
+      ['Brown'],
+      ['Gold'],
+      ['Silver']
+    ]
   end
 
   def create
     @order = Order.new(order_params)
     @order.user_id = current_user.id
+    @order.colors = params[:order][:colors]
 
     if @order.save
       if @order.is_delivery
+        flash[:success] = 'Step 1 of 2 is complete — now schedule your delivery!'
         redirect_to new_order_delivery_path(@order)
       else
+        flash[:success] = 'Step 1 of 2 is complete — now schedule your pickup!'
         redirect_to new_order_pickup_path(@order)
       end
     else
@@ -72,6 +90,6 @@ class OrdersController < ApplicationController
   private
 
     def order_params
-      params.require(:order).permit(:count, :description, :is_delivery)
+      params.require(:order).permit(:count, :description, :allergies, :is_delivery)
     end
 end

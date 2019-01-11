@@ -15,6 +15,7 @@ class DeliveriesController < ApplicationController
       @order.pickup.destroy if @order.pickup
       OrderMailer.new_order_email_to_user(@order).deliver_now
       OrderMailer.new_order_email_to_lauren(@order).deliver_now
+      flash[:success] = 'Your order was sent!'
       redirect_to @order
     else
       render 'new'
