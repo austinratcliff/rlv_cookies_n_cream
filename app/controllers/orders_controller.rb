@@ -6,8 +6,8 @@ class OrdersController < ApplicationController
     @counts = [
       [6, 'Half dozen'],
       [12, 'One dozen'],
-      [24, 'Two dozens'],
-      [36, 'Three dozens'],
+      [24, 'Two dozen'],
+      [36, 'Three dozen'],
       [nil, "Let's chat"]
     ]
     @colors = [
@@ -54,8 +54,8 @@ class OrdersController < ApplicationController
   #   @counts = [
   #     [6, 'Half dozen'],
   #     [12, 'One dozen'],
-  #     [24, 'Two dozens'],
-  #     [36, 'Three dozens'],
+  #     [24, 'Two dozen'],
+  #     [36, 'Three dozen'],
   #     [nil, "Let's chat"]
   #   ]
   # end
